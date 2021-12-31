@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ASP.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped" id="table1">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Courseid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coursename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coursetoeic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Courseid)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Coursename)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Coursetoeic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Courseid })|
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Courseid }, new { onclick = "return confirm('Are you sure you wish to delete this cat?');" })
+
+                </td>
+            </tr>
+}
+    </tbody>
+    </table>

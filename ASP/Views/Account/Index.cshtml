@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ASP.Models.Account>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2><p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped" id="table1">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Accountid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <th>
+        @Html.DisplayFor(modelItem => item.Accountid)
+    </th>
+    <td>
+        @Html.DisplayFor(modelItem => item.Username)
+    </td>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+
+        @Html.ActionLink("Edit", "Edit", new { id = item.Accountid })|
+        @Html.ActionLink("Delete", "Delete", new { id = item.Accountid }, new { onclick = "return confirm('Are you sure you wish to delete this cat?');" })
+
+    </td>
+</tr>}
+    </tbody>
+</table>

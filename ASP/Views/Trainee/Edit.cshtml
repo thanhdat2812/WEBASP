@@ -1,0 +1,75 @@
+﻿@model ASP.Models.Trainee
+@{ ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Traineeid, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.Traineeid, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } });
+                                            @Html.ValidationMessageFor(model => model.Traineeid, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Traineename, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.Traineename, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Traineename, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                     
+
+                                                                                <div class="col-md-6 col-12">
+                                                                                    <div class="form-group">
+                                                                                        @Html.LabelFor(model => model.local_address, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                                                        @Html.EditorFor(model => model.local_address, new { htmlAttributes = new { @class = "form-control" } })
+                                                                                        @Html.ValidationMessageFor(model => model.local_address, "", new { @class = "text-danger" })
+                                                                                    </div>
+                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        @Html.LabelFor(model => model.Courseid, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                                                                        @Html.EditorFor(model => model.Courseid, new { htmlAttributes = new { @class = "form-control" } })
+                                                                                                        @Html.ValidationMessageFor(model => model.Courseid, "", new { @class = "text-danger" })
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                                <div class="col-md-6 col-12">
+                                                                                                                    <div class="form-group">
+                                                                                                                        @Html.LabelFor(model => model.Coursetoeic, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                                                                                        @Html.EditorFor(model => model.Coursetoeic, new { htmlAttributes = new { @class = "form-control" } })
+                                                                                                                        @Html.ValidationMessageFor(model => model.Coursetoeic, "", new { @class = "text-danger" })
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                                                <div class="col-md-6 col-12">
+                                                                                                                                    <div class="form-group">
+                                                                                                                                        @Html.LabelFor(model => model.Accountid, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                                                                                                        @Html.EditorFor(model => model.Accountid, new { htmlAttributes = new { @class = "form-control" } })
+                                                                                                                                        @Html.ValidationMessageFor(model => model.Accountid, "", new { @class = "text-danger" })
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                                                <div class="col-md-6 col-12">
+                                                                                                                                                </div>
+                                                                                                                                                                <div class="col-12 d-flex justify-content-end">
+                                                                                                                                                                    <button type="submit" class="btn btn-primary me-1 mb-1">
+                                                                                                                                                                        Save
+                                                                                                                                                                    </button>
+                                                                                                                                                                    <button onclick="location.href='@Url.Action("Index", "Account")';return false;" class="btn btn-light-secondary me-1 mb-1">Back to List</button>
+                                                                                                                                                                </div>}

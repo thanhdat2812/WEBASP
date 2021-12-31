@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ASP.Models.Trainee>
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped" id="table1">
+
+           <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Traineeid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Traineename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.local_address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Courseid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coursetoeic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accountid)
+            </th>
+    </tr>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <th>
+        @Html.DisplayFor(modelItem => item.Traineeid)
+    </th>
+    <td>
+        @Html.DisplayFor(modelItem => item.Traineename)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.local_address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Courseid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Coursetoeic)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Accountid)
+    </td>
+    <td>
+
+        @Html.ActionLink("Edit", "Edit", new { id = item.Traineeid })|
+        @Html.ActionLink("Delete", "Delete", new { id = item.Traineeid }, new { onclick = "return confirm('Are you sure you wish to delete this cat?');" })
+
+    </td>
+</tr>
+}
+    </tbody>
+
+    </table>
