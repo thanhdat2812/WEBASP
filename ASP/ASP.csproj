@@ -2741,6 +2741,7 @@
     <Content Include="assets\vendors\tinymce\langs\readme.md" />
     <Content Include="assets\vendors\tinymce\skins\ui\oxide-dark\fonts\tinymce-mobile.woff" />
     <Content Include="assets\vendors\tinymce\skins\ui\oxide\fonts\tinymce-mobile.woff" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
